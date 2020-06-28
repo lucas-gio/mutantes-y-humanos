@@ -1,4 +1,4 @@
-package services.interfaces;
+package com.application.services.mutant;
 public interface MutantService {
     /**
      * Determina si el adn tomado por parámetro corresponde a un mutante o no.
