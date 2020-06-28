@@ -18,7 +18,7 @@ public class ApiRestController {
 	private ApiService apiService;
 	private MutantService mutantService;
 	private StatsService statsService;
-	private final int SERVER_PORT = 8080;
+	private final static int SERVER_PORT = 80;
 	private final int MAX_THREADS = 8;
 	private final int MIN_THREADS = 2;
 	private final int IDLE_TIMEOUT_MS = 30000;

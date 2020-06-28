@@ -24,7 +24,6 @@
     <slf4j.version>1.7.21</slf4j.version>
     <spring.version>4.2.0.RELEASE</spring.version>
     <mongo.version>3.4.1</mongo.version>
-
   </properties>
 
   <dependencies>
@@ -86,6 +85,27 @@
   <build>
     <finalName>MercadoLibreLucasGioia</finalName>
     <plugins>
+      <!--Este plugin almacena toda dependencia en un único jar de salida.-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>com.application.Application</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
@@ -138,6 +158,21 @@
             </dependency>
           </dependencies>
         </plugin>
+      <!--Crea el archivo manifesto para determinar la clase principal de ejecución.-->
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.0</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>
+                  com.application.Application
+                </mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
@@ -157,9 +192,6 @@
             </execution>
           </executions>
         </plugin>
-
-
-
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>

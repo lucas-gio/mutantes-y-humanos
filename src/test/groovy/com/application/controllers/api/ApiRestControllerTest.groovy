@@ -25,7 +25,7 @@ class ApiRestControllerTest extends Specification {
 
         thread1.start()
         while (!Application.isLoaded) Thread.sleep(500)
-        final String MUTANT_URL = "http://localhost:8080${Path.MUTANT}"
+        final String MUTANT_URL = "http://localhost:${ApiRestController.SERVER_PORT}${Path.MUTANT}"
 
         and: "La colección de adn vacía"
         cleanAllDnaCollection()
@@ -72,7 +72,7 @@ class ApiRestControllerTest extends Specification {
         doPost(MUTANT_URL, message).getResponseCode()
 
         and :"Se verifican las estadísticas"
-        String jsonResponse = new URL("http://localhost:8080${Path.STATS}").getText()
+        String jsonResponse = new URL("http://localhost:${ApiRestController.SERVER_PORT}${Path.STATS}").getText()
 
         then: "Se obtiene que hubo 4 mutantes y 10 humanos, con su ratio"
         jsonResponse == '{"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}'
