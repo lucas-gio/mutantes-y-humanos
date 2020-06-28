@@ -1,110 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8686e143-db7d-4ea3-97bc-ebb5af4f8610" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="c7d2f16e-242c-4050-846f-9abfcfd2a957" name="Version final 1" comment="Version final 1 con test ok y código ok." />
+    <list id="8686e143-db7d-4ea3-97bc-ebb5af4f8610" name="Ignore" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia/WEB-INF/classes/exceptions/MutantException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia/WEB-INF/classes/services/MutantVerificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia/WEB-INF/classes/services/interfaces/MutantService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MercadoLibreLucasGioia/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exceptions/MutantException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/MutantVerificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/interfaces/MutantService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/MutantVerificationServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-MutantVerificationServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MutantVerificationServiceTest.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-188453562">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="3" />
-          <entry key="Groovy" value="1" />
-          <entry key="HTML" value="1" />
-          <entry key="JAVA" value="2" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Groovy" value="370" />
-          <entry key="JAVA" value="307" />
-          <entry key="XML" value="73" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/log4j2-test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/MutantVerificationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="9" column="65" lean-forward="true" selection-start-line="9" selection-start-column="65" selection-end-line="10" selection-end-column="88" />
-              <folding>
-                <element signature="e#1780#1781#0" expanded="true" />
-                <element signature="e#1836#1837#0" expanded="true" />
-                <element signature="e#1919#1920#0" expanded="true" />
-                <element signature="e#1946#1947#0" expanded="true" />
-                <element signature="e#2023#2024#0" expanded="true" />
-                <element signature="e#2050#2051#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/groovy/MutantVerificationServiceTest.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../demo01/demo01" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/services/MutantVerificationService.java" />
-        <option value="$PROJECT_DIR$/src/test/groovy/MutantVerificationServiceTest.groovy" />
-        <option value="$PROJECT_DIR$/log4j.xml" />
-        <option value="$PROJECT_DIR$/log4j2-test.xml" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -112,39 +78,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="threads" value="3" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="MercadoLibre LucasGioia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="MercadoLibre LucasGioia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="641" />
-    <option name="width" value="662" />
-    <option name="height" value="775" />
-  </component>
+  <component name="ProjectId" id="1dxKFgVB3DEj8zQTdIJNGJVwjty" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -230,30 +164,18 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MercadoLibreLucasGioia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MercadoLibreLucasGioia" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/codigo_fuente/arbol-completo/TRUNK/Productos/7.0.0/dev/engine/g-engine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../codigo_fuente/arbol-completo/TRUNK/Productos/7.0.0/dev/engine/g-engine" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
@@ -269,21 +191,32 @@
       <recent name="C:\codigo_pruebas\MercadoLibreLucasGioia" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.application.Application" />
+      <module name="MercadoLibre-Lucas-Gioia" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -294,10 +227,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in MercadoLibre-Lucas-Gioia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MercadoLibre-Lucas-Gioia" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MutantVerificationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MercadoLibreLucasGioia" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MutantVerificationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -315,12 +258,14 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -328,21 +273,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.MutantVerificationServiceTest" />
       <item itemvalue="JUnit.MutantVerificationServiceTest.Se prueba el correcto funcionamiento del método de verificación de adn" />
+      <item itemvalue="JUnit.All in MercadoLibre-Lucas-Gioia" />
+      <item itemvalue="Application.Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.All in MercadoLibre-Lucas-Gioia" />
         <item itemvalue="JUnit.MutantVerificationServiceTest" />
         <item itemvalue="JUnit.MutantVerificationServiceTest.Se prueba el correcto funcionamiento del método de verificación de adn" />
       </list>
@@ -354,124 +294,145 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8686e143-db7d-4ea3-97bc-ebb5af4f8610" name="Default Changelist" comment="" />
+      <changelist id="c7d2f16e-242c-4050-846f-9abfcfd2a957" name="Version final 1" comment="Version final 1 con test ok y código ok." />
       <created>1592698388158</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592698388158</updated>
     </task>
+    <task id="LOCAL-00001" summary="Versión final 1. Funcionan los test, cobertura al 100%, y funciona el sistema.">
+      <created>1593364255570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593364255570</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Subo una clase faltante">
+      <created>1593364296749</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593364296749</updated>
+    </task>
+    <task id="LOCAL-00003" summary="a.- Empaquetado como jar junto a sus dependencias en el pom. &#10;b.- Extracción de constantes en api rest controller test, y modificación del puerto 8080 a 80.">
+      <created>1593375749030</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593375749030</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="MutantVerificationServiceTest_Se_prueba_el_correcto_funcionamiento_del_método_de_verificación_de_adn - 2020.06.21 at 13h 20m 08s.xml">
-      <configuration name="MutantVerificationServiceTest.Se prueba el correcto funcionamiento del método de verificación de adn" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 13h 40m 21s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 13h 46m 40s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 13h 53m 18s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 13h 53m 47s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 13h 56m 05s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 14h 49m 31s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 14h 52m 03s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 14h 53m 08s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MutantVerificationServiceTest - 2020.06.21 at 14h 53m 17s.xml">
-      <configuration name="MutantVerificationServiceTest" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1312" height="784" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Web" order="0" side_tool="true" />
-      <window_info id="JavaEE:App" order="1" side_tool="true" />
-      <window_info id="EJB" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.19249201" />
-      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Palette&#9;" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Stack trace to UML" show_stripe_button="false" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="0" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32307693" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.36461538" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="right" id="Mongo Explorer" />
-      <window_info anchor="right" id="CDI" order="0" />
-      <window_info anchor="right" id="JSF" order="1" />
-      <window_info anchor="right" id="Bean Validation" order="2" />
-      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.18929712" />
-      <window_info anchor="right" id="Designer" order="8" />
-      <window_info anchor="right" id="Database" order="9" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Web" order="0" side_tool="true" />
-      <window_info id="JavaEE:App" order="1" side_tool="true" />
-      <window_info id="EJB" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.19249201" />
-      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Palette&#9;" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Stack trace to UML" order="2" show_stripe_button="false" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="3" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.36461538" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="13" />
-      <window_info anchor="right" id="Mongo Explorer" order="0" />
-      <window_info anchor="right" id="CDI" order="1" />
-      <window_info anchor="right" id="JSF" order="2" />
-      <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info anchor="right" id="Commander" order="4" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18929712" />
-      <window_info anchor="right" id="Designer" order="9" />
-      <window_info anchor="right" id="Database" order="10" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Versión final 1. Funcionan los test, cobertura al 100%, y funciona el sistema." />
+    <MESSAGE value="Subo una clase faltante" />
+    <MESSAGE value="a.- Empaquetado como jar junto a sus dependencias en el pom. &#10;b.- Extracción de constantes en api rest controller test, y modificación del puerto 8080 a 80." />
+    <option name="LAST_COMMIT_MESSAGE" value="a.- Empaquetado como jar junto a sus dependencias en el pom. &#10;b.- Extracción de constantes en api rest controller test, y modificación del puerto 8080 a 80." />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1112" height="584" key="DiffContextDialog" timestamp="1593362147164">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="92" y="92" width="1112" height="584" key="DiffContextDialog/0.0.1296.768@0.0.1296.768" timestamp="1593362147164" />
+    <state x="428" y="138" key="FileChooserDialogImpl" timestamp="1593368804571">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="428" y="138" key="FileChooserDialogImpl/0.0.1296.768@0.0.1296.768" timestamp="1593368804571" />
+    <state width="1253" height="207" key="GridCell.Tab.0.bottom" timestamp="1593375755341">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="207" key="GridCell.Tab.0.bottom/0.0.1296.768@0.0.1296.768" timestamp="1593375755341" />
+    <state width="1253" height="207" key="GridCell.Tab.0.center" timestamp="1593375755341">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="207" key="GridCell.Tab.0.center/0.0.1296.768@0.0.1296.768" timestamp="1593375755341" />
+    <state width="1253" height="207" key="GridCell.Tab.0.left" timestamp="1593375755341">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="207" key="GridCell.Tab.0.left/0.0.1296.768@0.0.1296.768" timestamp="1593375755341" />
+    <state width="1253" height="207" key="GridCell.Tab.0.right" timestamp="1593375755341">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="207" key="GridCell.Tab.0.right/0.0.1296.768@0.0.1296.768" timestamp="1593375755341" />
+    <state width="1253" height="215" key="GridCell.Tab.1.bottom" timestamp="1593374919642">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="215" key="GridCell.Tab.1.bottom/0.0.1296.768@0.0.1296.768" timestamp="1593374919642" />
+    <state width="1253" height="215" key="GridCell.Tab.1.center" timestamp="1593374919641">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="215" key="GridCell.Tab.1.center/0.0.1296.768@0.0.1296.768" timestamp="1593374919641" />
+    <state width="1253" height="215" key="GridCell.Tab.1.left" timestamp="1593374919641">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="215" key="GridCell.Tab.1.left/0.0.1296.768@0.0.1296.768" timestamp="1593374919641" />
+    <state width="1253" height="215" key="GridCell.Tab.1.right" timestamp="1593374919641">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state width="1253" height="215" key="GridCell.Tab.1.right/0.0.1296.768@0.0.1296.768" timestamp="1593374919641" />
+    <state x="228" y="126" key="IDE.errors.dialog" timestamp="1593370689085">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="228" y="126" key="IDE.errors.dialog/0.0.1296.768@0.0.1296.768" timestamp="1593370689085" />
+    <state x="345" y="86" key="RollbackChangesDialog" timestamp="1593364079777">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="345" y="86" key="RollbackChangesDialog/0.0.1296.768@0.0.1296.768" timestamp="1593364079777" />
+    <state x="149" y="28" key="SettingsEditor" timestamp="1593370183661">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="149" y="28" key="SettingsEditor/0.0.1296.768@0.0.1296.768" timestamp="1593370183661" />
+    <state x="534" y="299" key="VCS.EditChangelistDialog" timestamp="1593361895416">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="534" y="299" key="VCS.EditChangelistDialog/0.0.1296.768@0.0.1296.768" timestamp="1593361895416" />
+    <state x="240" y="116" key="Vcs.Push.Dialog.v2" timestamp="1593375790239">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="240" y="116" key="Vcs.Push.Dialog.v2/0.0.1296.768@0.0.1296.768" timestamp="1593375790239" />
+    <state x="457" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593366347888">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="457" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1296.768@0.0.1296.768" timestamp="1593366347888" />
+    <state x="311" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593363266808">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="311" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1296.768@0.0.1296.768" timestamp="1593363266808" />
+    <state x="111" y="134" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1593361576879">
+      <screen x="0" y="0" width="1296" height="768" />
+    </state>
+    <state x="111" y="134" key="vcs.ApplyPatchDifferentiatedDialog/0.0.1296.768@0.0.1296.768" timestamp="1593361576879" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MercadoLibre_Lucas_Gioia$All_in_MercadoLibre_Lucas_Gioia.ic" NAME="All in MercadoLibre-Lucas-Gioia Coverage Results" MODIFIED="1593361793377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -526,68 +487,6 @@
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/surefire-reports/MutantVerificationServiceTest.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/site/cobertura/help.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/spockframework/spock-core/1.0-groovy-2.4/spock-core-1.0-groovy-2.4.jar!/spock/lang/Specification.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/org/apache/commons/logging/LogFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="236" column="22" selection-start-line="236" selection-start-column="22" selection-end-line="236" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/MutantVerificationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="65" lean-forward="true" selection-start-line="9" selection-start-column="65" selection-end-line="10" selection-end-column="88" />
-          <folding>
-            <element signature="e#1780#1781#0" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-            <element signature="e#1946#1947#0" expanded="true" />
-            <element signature="e#2023#2024#0" expanded="true" />
-            <element signature="e#2050#2051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/MutantVerificationServiceTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log4j2-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
