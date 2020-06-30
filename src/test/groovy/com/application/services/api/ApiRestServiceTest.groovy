@@ -1,20 +1,25 @@
 package com.application.services.api
 
-import com.application.domain.DnasReceived
+import com.application.domain.DnaReceived
+import com.application.exceptions.RestMutantValidationException
 import com.application.services.mongo.AppMongoClient
+
 import com.mongodb.BasicDBObject
 import org.bson.Document
 import spock.lang.Specification
 
+/**
+ * Pruebas de relacionadas a la implementación de ApiRestService.
+ */
 class ApiRestServiceTest extends Specification{
     ApiRestService apiRestService = new ApiRestService()
 
     def "Se verifica que al obtener un json con el adn el el cuerpo de un mensaje, se interprete correctamente como array"(){
         when: "Se envía cuatro mensajes con adn válido"
-        String[] mutant1 = apiRestService.parseReceivedDnaList('{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}')
-        String[] mutant2 = apiRestService.parseReceivedDnaList('{"dna":["ATGCGA","CAGTGC","GTTTTT","AGACGG","GCGTCA","TCACTG"]}')
-        String[] mutant3 = apiRestService.parseReceivedDnaList('{"dna":["AGGCGA","CTGTGC","TTATTT","ATACGG","GTGTCA","TCACTG"]}')
-        String[] mutant4 = apiRestService.parseReceivedDnaList('{"dna":["ATGCGA","CAGTGC","TTATTT","AGTCGG","GCGTCA","TCACTG"]}')
+        String[] mutant1 = apiRestService.parseReceivedDna('{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}')
+        String[] mutant2 = apiRestService.parseReceivedDna('{"dna":["ATGCGA","CAGTGC","GTTTTT","AGACGG","GCGTCA","TCACTG"]}')
+        String[] mutant3 = apiRestService.parseReceivedDna('{"dna":["AGGCGA","CTGTGC","TTATTT","ATACGG","GTGTCA","TCACTG"]}')
+        String[] mutant4 = apiRestService.parseReceivedDna('{"dna":["ATGCGA","CAGTGC","TTATTT","AGTCGG","GCGTCA","TCACTG"]}')
 
         then: "Cada uno de ellos se interpreta como array correctamente"
         mutant1[0] == "ATGCGA"
@@ -68,15 +73,15 @@ class ApiRestServiceTest extends Specification{
         mutant[5] = "TCACTG"
 
         when:"Se tratan de almacenar"
-        apiRestService.saveDnasReceived(human, false)
-        apiRestService.saveDnasReceived(mutant, true)
-        List<Document> storedDnas = AppMongoClient.getDb().getCollection(DnasReceived.collectionName).find(new BasicDBObject()).collect()
+        apiRestService.saveDnaReceived(human, false)
+        apiRestService.saveDnaReceived(mutant, true)
+        List<Document> storedDnas = AppMongoClient.getDb().getCollection(DnaReceived.collectionName).find(new BasicDBObject()).collect()
 
         then: "Existen en la bd"
         storedDnas != null
         storedDnas.size() == 2
 
-        and: "Tiene un id, y un listado de adn con 6 elementos"
+        and: "Tiene un id, y un adn con 6 elementos"
         storedDnas.find{Document it-> it.isMutant == false}._id != null
         storedDnas.find{Document it-> it.isMutant == false}.dna != null
         storedDnas.find{Document it-> it.isMutant == false}.dna.size() == 6
@@ -105,10 +110,45 @@ class ApiRestServiceTest extends Specification{
         cleanAllDnaCollection()
     }
 
+    def "Se verifica que el método validInputRegex() retorne la expresión regular esperada"(){
+        expect:"Al llamar al método se obtiene el valor esperado"
+        apiRestService.validInputRegex() == '^([ATCG]{1,})$'
+    }
+
+    def "Se verifica que ante un ingreso de valores inválidos de adn falle el validador"(){
+        when: "Se valida un adn null"
+        String [] adn = null
+        apiRestService.validateDnaReceived(adn)
+
+        then: "Se obtiene una excepción de validación"
+        thrown(RestMutantValidationException)
+
+        when: "Se valida un adn vacío"
+        adn = new String[0]
+        apiRestService.validateDnaReceived(adn)
+
+        then: "Se obtiene una excepción de validación"
+        thrown(RestMutantValidationException)
+
+        when: "Se valida un adn con valor inválido"
+        adn = new String[6]
+        adn[0] = "XYZ"
+        adn[1] = "CAGkGC"
+        adn[2] = "tTATGT"
+        adn[3] = "AGAAGG"
+        adn[4] = "CCCCTA"
+        adn[5] = "TCACTG"
+
+        apiRestService.validateDnaReceived(adn)
+
+        then: "Se obtiene una excepción de validación"
+        thrown(RestMutantValidationException)
+    }
+
     /**
      * Borra toda la colección dna received
      */
     private void cleanAllDnaCollection(){
-        AppMongoClient.getDb().getCollection(DnasReceived.collectionName).deleteMany(new BasicDBObject())
+        AppMongoClient.getDb().getCollection(DnaReceived.collectionName).deleteMany(new BasicDBObject())
     }
 }

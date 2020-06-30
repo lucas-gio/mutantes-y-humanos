@@ -6,9 +6,9 @@ import org.bson.types.ObjectId;
 import java.util.Arrays;
 
 /**
- * Clase que representa un registro a almacenar de adns recibidos.
+ * Clase que representa un registro a almacenar de adn recibido.
  */
-public class DnasReceived {
+public class DnaReceived {
 	public static String collectionName = "dna";
 
 	private String id;
@@ -42,7 +42,7 @@ public class DnasReceived {
 		return this.content;
 	}
 
-	public DnasReceived(String[] content, Boolean isMutant){
+	public DnaReceived(String[] content, Boolean isMutant){
 		setIsMutant(isMutant);
 		setContent(content);
 		setId(new ObjectId().toString());

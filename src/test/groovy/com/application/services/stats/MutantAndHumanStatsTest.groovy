@@ -1,7 +1,8 @@
 package com.application.services.stats
 
-import com.application.domain.DnasReceived
+import com.application.domain.DnaReceived
 import com.application.services.mongo.AppMongoClient
+
 import com.mongodb.BasicDBObject
 import spock.lang.Specification
 
@@ -47,7 +48,7 @@ class MutantAndHumanStatsTest extends Specification {
 		mutant3[3] = "ATACGG"
 		mutant3[4] = "GTGTCA"
 		mutant3[5] = "TCACTG"
-		// ^--  Mutante
+		            // ^--  Mutante
 
 		String [] mutant4 = new String[6]
 		mutant4[0] = "ATGCGA"
@@ -56,7 +57,7 @@ class MutantAndHumanStatsTest extends Specification {
 		mutant4[3] = "AGTCGG"
 		mutant4[4] = "GCGTCA"
 		mutant4[5] = "TCACTG"
-		// ^--  Mutante
+		               // ^--  Mutante
 
 		when: "No hay registros preexistentes y se consulta la estadística"
 		String stat = mutantAndHumanStatsService.getJsonStats()
@@ -65,8 +66,8 @@ class MutantAndHumanStatsTest extends Specification {
 		stat == '{"count_mutant_dna":0,"count_human_dna":0,"ratio":0}'
 
 		when: "Hay 1 humano y no hay mutantes y se consulta la estadística"
-		AppMongoClient.getDb().getCollection(DnasReceived.collectionName).insertOne(
-				new DnasReceived(human, false).toDocument()
+		AppMongoClient.getDb().getCollection(DnaReceived.collectionName).insertOne(
+				new DnaReceived(human, false).toDocument()
 		)
 
 		stat = mutantAndHumanStatsService.getJsonStats()
@@ -77,8 +78,8 @@ class MutantAndHumanStatsTest extends Specification {
 		when: "Hay 1 mutante y no hay humanos, y se consulta la estadística"
 		cleanAllDnaCollection()
 
-		AppMongoClient.getDb().getCollection(DnasReceived.collectionName).insertOne(
-				new DnasReceived(mutant1, true).toDocument()
+		AppMongoClient.getDb().getCollection(DnaReceived.collectionName).insertOne(
+				new DnaReceived(mutant1, true).toDocument()
 		)
 
 		stat = mutantAndHumanStatsService.getJsonStats()
@@ -89,23 +90,23 @@ class MutantAndHumanStatsTest extends Specification {
 		when: "Hay 4 mutantes y 10 humanos, y se consulta la estadística"
 		cleanAllDnaCollection()
 
-		AppMongoClient.getDb().getCollection(DnasReceived.collectionName).insertMany(
+		AppMongoClient.getDb().getCollection(DnaReceived.collectionName).insertMany(
 			[
-				new DnasReceived(mutant1, true).toDocument(),
-				new DnasReceived(mutant2, true).toDocument(),
-				new DnasReceived(mutant3, true).toDocument(),
-				new DnasReceived(mutant4, true).toDocument(),
+                    new DnaReceived(mutant1, true).toDocument(),
+                    new DnaReceived(mutant2, true).toDocument(),
+                    new DnaReceived(mutant3, true).toDocument(),
+                    new DnaReceived(mutant4, true).toDocument(),
 
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
-				new DnasReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
+                    new DnaReceived(human, false).toDocument(),
 			]
 		)
 
@@ -122,7 +123,7 @@ class MutantAndHumanStatsTest extends Specification {
 	 * Borra toda la colección dna received
 	 */
 	private void cleanAllDnaCollection(){
-		AppMongoClient.getDb().getCollection(DnasReceived.collectionName).deleteMany(new BasicDBObject())
+		AppMongoClient.getDb().getCollection(DnaReceived.collectionName).deleteMany(new BasicDBObject())
 	}
 
 }

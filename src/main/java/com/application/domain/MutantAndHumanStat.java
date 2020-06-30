@@ -3,7 +3,6 @@ package com.application.domain;
 import com.google.gson.Gson;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,7 +10,6 @@ import java.util.Map;
  * Clase que representa una estadística de cantidad de humanos, mutantes, y su relación.
  */
 public class MutantAndHumanStat {
-
 	private long countMutantDna;
 	private long countHumanDna;
 	private BigDecimal ratio;

@@ -1,6 +1,6 @@
 package com.application.services.stats;
 
-import com.application.domain.DnasReceived;
+import com.application.domain.DnaReceived;
 import com.application.domain.MutantAndHumanStat;
 import com.application.services.mongo.AppMongoClient;
 import com.mongodb.client.MongoCollection;
@@ -13,21 +13,21 @@ import java.math.BigDecimal;
 
 @Service
 public class MutantAndHumanStatsService implements StatsService{
-	final Logger log = LoggerFactory.getLogger(MutantAndHumanStatsService.class);
+	final Logger LOG = LoggerFactory.getLogger(MutantAndHumanStatsService.class);
 
 	@Override
 	public String getJsonStats() throws Exception{
 		try {
-			MongoCollection mongoCollection = AppMongoClient.getDb().getCollection(DnasReceived.collectionName);
+			MongoCollection mongoCollection = AppMongoClient.getDb().getCollection(DnaReceived.collectionName);
 
-			long mutantCount = mongoCollection.count(
-					Filters.eq(DnasReceived._isMutant, true)
+			long mutantCount = mongoCollection.countDocuments(
+					Filters.eq(DnaReceived._isMutant, true)
 			);
 
 			// Buscando nuevamente en la base se evitan problemas de presición en el resultado que utilizando un conteo sin criterios
 			// y haciendo una diferencia con el total, para obtener este valor.
-			long humanCount = mongoCollection.count(
-					Filters.eq(DnasReceived._isMutant, false)
+			long humanCount = mongoCollection.countDocuments(
+					Filters.eq(DnaReceived._isMutant, false)
 			);
 
 			BigDecimal ratio = new BigDecimal((mutantCount));
@@ -43,7 +43,7 @@ public class MutantAndHumanStatsService implements StatsService{
 			return result;
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al procesar las estadísticas de mutantes y humanos.", e);
+			LOG.error("Ocurrió un error al procesar las estadísticas de mutantes y humanos.", e);
 			throw e;
 		}
 	}

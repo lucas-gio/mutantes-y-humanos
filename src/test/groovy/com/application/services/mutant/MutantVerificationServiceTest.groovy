@@ -1,7 +1,7 @@
 package com.application.services.mutant
 
 
-import com.application.exceptions.MutantException
+import com.application.exceptions.MutantDetectedException
 import spock.lang.Specification
 
 /**
@@ -12,7 +12,7 @@ class MutantVerificationServiceTest extends Specification{
 
     def "Se prueba el correcto funcionamiento del método de verificación de adn"(){
         given: "Un array de adns a verificar SIN mutantes"
-        String[] adnArray = new String[13]
+        String[] adnArray = new String[12]
         adnArray[0] = "ATGCGA"
         adnArray[1] = "CAGTGC"
         adnArray[2] = "TTATTT"
@@ -21,17 +21,16 @@ class MutantVerificationServiceTest extends Specification{
         adnArray[5] = "TCACTG"
         adnArray[6] = "TTTATT"
         adnArray[7] = "asdasd"
-        adnArray[8] = null
-        adnArray[9] = "      "
-        adnArray[10] = ""
-        adnArray[11] = "ttttag"   // <------ No es mutante, porque considera sólo mayúsculas.
-        adnArray[12] = "AAAagg"   // <------ No es mutante, porque considera sólo mayúsculas.
+        adnArray[8] = "      "
+        adnArray[9] = ""
+        adnArray[10] = "ttttag"   // <------ No es mutante, porque considera sólo mayúsculas.
+        adnArray[11] = "AAAagg"   // <------ No es mutante, porque considera sólo mayúsculas.
 
         when: "Se llama al método"
         mutantVerificationService.verify(adnArray)
 
         then: "Se verifica que no hay ningún adn correspondiente a mutantes"
-        notThrown(MutantException)
+        notThrown(MutantDetectedException)
 
         when: "Se envía un array de adns a verificar CON mutantes"
         adnArray = new String[6]
@@ -44,8 +43,8 @@ class MutantVerificationServiceTest extends Specification{
 
         mutantVerificationService.verify(adnArray)
 
-        then:"Se obtuvo la excepción MutantException ya que se encontraron mutantes"
-        thrown(MutantException)
+        then:"Se obtuvo la excepción MutantDetectedException ya que se encontraron mutantes"
+        thrown(MutantDetectedException)
     }
 
     def "Se prueba el método isMutant(String[]) para verificar el circuito completo que tiene en cuenta la verificación de columnas, filas, y en forma oblícua"(){

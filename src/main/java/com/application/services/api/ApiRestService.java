@@ -1,7 +1,7 @@
 package com.application.services.api;
 
 import com.application.controllers.api.ApiRestController;
-import com.application.domain.DnasReceived;
+import com.application.domain.DnaReceived;
 import com.application.exceptions.RestMutantValidationException;
 import com.application.services.mongo.AppMongoClient;
 import com.google.gson.Gson;
@@ -15,10 +15,10 @@ import java.util.regex.Pattern;
 
 @Service
 public class ApiRestService implements ApiService{
-	private static final Logger log = LoggerFactory.getLogger(ApiRestController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ApiRestController.class);
 
 	@Override
-	public void validateDnasReceived(final String[] dna) throws RestMutantValidationException {
+	public void validateDnaReceived(final String[] dna) throws RestMutantValidationException {
 		if((dna == null) || (dna.length == 0)){
 			throw new RestMutantValidationException("El listado de adn a verificar se encuentra vacío.");
 		}
@@ -38,22 +38,22 @@ public class ApiRestService implements ApiService{
 	}
 
 	@Override
-	public void saveDnasReceived(String[] dna, Boolean isMutant) throws Exception{
+	public void saveDnaReceived(String[] dna, Boolean isMutant) throws Exception{
 		try {
 			AppMongoClient.getDb()
-					.getCollection(DnasReceived.collectionName)
+					.getCollection(DnaReceived.collectionName)
 					.insertOne(
-							new DnasReceived(dna, isMutant).toDocument()
+							new DnaReceived(dna, isMutant).toDocument()
 					);
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al almacenar un registro para el adn recibido.", e);
+			LOG.error("Ocurrió un error al almacenar un registro para el adn recibido.", e);
 			throw e;
 		}
 	}
 
 	@Override
-	public String[] parseReceivedDnaList(String body){
+	public String[] parseReceivedDna(String body){
 		final String DNA_KEY = "dna";
 
 		try {
@@ -62,7 +62,7 @@ public class ApiRestService implements ApiService{
 			return dnasBody.toArray(new String[dnasBody.size()]);
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al interpretar el mensaje recibido.", e);
+			LOG.error("Ocurrió un error al interpretar el mensaje recibido.", e);
 			throw e;
 		}
 	}

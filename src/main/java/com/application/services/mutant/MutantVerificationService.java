@@ -1,6 +1,6 @@
 package com.application.services.mutant;
 
-import com.application.exceptions.MutantException;
+import com.application.exceptions.MutantDetectedException;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 @Service
 public class MutantVerificationService implements MutantService {
-    private static final Logger log = Logger.getLogger(MutantVerificationService.class);
+    private static final Logger LOG = Logger.getLogger(MutantVerificationService.class);
 
     @Override
     public boolean isMutant(final String[] dna) {
@@ -19,14 +19,14 @@ public class MutantVerificationService implements MutantService {
             verifyInVertical(dna);
             verifyInOblique(dna);
             // Verificando antes si está activo el nivel, se evita generar el string parámetro si no es necesario.
-            if(log.isInfoEnabled()){ log.info("No se detectó ningún mutante en el adn ingresado."); }
+            if(LOG.isInfoEnabled()){ LOG.info("No se detectó ningún mutante en el adn ingresado."); }
         }
-        catch (MutantException e){
+        catch (MutantDetectedException e){
             isMutant = true;
-            if(log.isInfoEnabled()){ log.info("Se detectó el adn " + ((e!=null) ? e.getMessage() : "[]") + " como propio de un mutante."); }
+            if(LOG.isInfoEnabled()){ LOG.info("Se detectó el adn " + ((e!=null) ? e.getMessage() : "[]") + " como propio de un mutante."); }
         }
         catch (Exception e){
-            log.error("Ocurrió un error al procesar el método de verificación de mutantes.", e);
+            LOG.error("Ocurrió un error al procesar el método de verificación de mutantes.", e);
             throw e;
         }
 
@@ -34,35 +34,31 @@ public class MutantVerificationService implements MutantService {
     }
 
     /**
-     * Verifica si algún adn corresponde con el de un mutante.
-     * @param dnaArray Un array con los adn de los seres a verificar.
+     * Verifica si el adn corresponde con el de un mutante.
+     * @param dnaArray Un array con el adn del ser a verificar.
      */
-    private void verify(String[] dnaArray) throws MutantException {
+    private void verify(String[] dnaArray) throws MutantDetectedException {
         for(String dna : dnaArray){
             verify(dna);
         }
     }
 
     /**
-     * Verifica si el adn corresponde con el de un mutante. En caso de corresponder libera una excepción
-     * MutantException.
+     * Verifica si el fragmento de adn corresponde con el de un mutante.
+     * En caso de corresponder libera una excepción MutantDetectedException.
      * @param dna El adn a verificar.
      */
-    private void verify(String dna) throws MutantException{
-        if(dna == null){
-            return;
-        }
-
+    private void verify(String dna) throws MutantDetectedException {
         try {
             if (Pattern.compile(getMutantRegex()).matcher(dna).find()) {
-                throw new MutantException(dna);
+                throw new MutantDetectedException(dna);
             }
         }
-        catch (MutantException e){
+        catch (MutantDetectedException e){
             throw e;
         }
         catch(Exception e){
-            log.error("Ocurrió un error al verificar el adn " + dna);
+            LOG.error("Ocurrió un error al verificar el adn " + dna);
             throw e;
         }
     }
@@ -72,7 +68,7 @@ public class MutantVerificationService implements MutantService {
      * se realiza su trasposición. Por cada fila convertida realiza la verificación.
      * @param dnaArray El array a trasponer.
      */
-    public void verifyInVertical(final String[] dnaArray) throws MutantException{
+    public void verifyInVertical(final String[] dnaArray) throws MutantDetectedException {
         StringBuffer column;
 
         try {
@@ -92,11 +88,11 @@ public class MutantVerificationService implements MutantService {
                 verify(column.toString());
             }
         }
-        catch (MutantException e){
+        catch (MutantDetectedException e){
             throw e;
         }
         catch (Exception e){
-            log.error("Ocurrió un error al convertir el array de adn a horizontal");
+            LOG.error("Ocurrió un error al convertir el array de adn a horizontal");
             throw e;
         }
     }
@@ -107,7 +103,7 @@ public class MutantVerificationService implements MutantService {
      *  Por cada fila convertida realiza la verificación.
      * @param dnaArray El array con el cual operar.
      */
-    public void verifyInOblique(final String[] dnaArray) throws MutantException{
+    public void verifyInOblique(final String[] dnaArray) throws MutantDetectedException {
         StringBuffer diagonalResult;
 
         try {
@@ -150,11 +146,11 @@ public class MutantVerificationService implements MutantService {
                 }
             }
         }
-        catch (MutantException e){
+        catch (MutantDetectedException e){
             throw e;
         }
         catch (Exception e){
-            log.error("Ocurrió un error al procesar el array de oblicuo a horizontal.", e);
+            LOG.error("Ocurrió un error al procesar el array de oblicuo a horizontal.", e);
             throw e;
         }
     }

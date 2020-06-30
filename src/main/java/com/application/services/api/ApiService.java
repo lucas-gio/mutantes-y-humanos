@@ -2,14 +2,17 @@ package com.application.services.api;
 
 import com.application.exceptions.RestMutantValidationException;
 
+/**
+ * Interfaz destinada a servicios de api.
+ */
 public interface ApiService {
 
 	/**
-	 * Realiza la validación del ingreso de adns. Libera RestMutantValidationException en caso de
+	 * Realiza la validación del ingreso de adn. Libera RestMutantValidationException en caso de
 	 * no ser válido el ingreso.
-	 * @param dna El array de adns a verificar.
+	 * @param dna El array de adn a verificar.
 	 */
-	void validateDnasReceived(String[] dna) throws RestMutantValidationException;
+	void validateDnaReceived(String[] dna) throws RestMutantValidationException;
 
 	/*
 	* Expresión regular que debe cumplirse en el ingreso de datos de adn.
@@ -17,17 +20,16 @@ public interface ApiService {
 	String validInputRegex();
 
 	/**
-	 * Almacena los adns recibido en la base de datos.
-	 * @param dnaObject El array de adns a almacenar.
+	 * Almacena el adn recibido en la base de datos.
+	 * @param dnaObject El array de adn a almacenar.
 	 * @param isMutant true si es mutante.
 	 */
-	void saveDnasReceived(String[] dnaObject, Boolean isMutant) throws Exception;
-
+	void saveDnaReceived(String[] dnaObject, Boolean isMutant) throws Exception;
 
 	/**
-	 * Toma el body recibido por rest, y lo procesa retornando la lista de adn.
+	 * Toma el cuerpo del mensaje recibido por rest, y lo procesa, retornando el array de adn.
 	 * @param body El cuerpo del mensaje recibido.
 	 * @return El array de adn.
 	 */
-	String[] parseReceivedDnaList(String body);
+	String[] parseReceivedDna(String body);
 }

@@ -1,13 +1,16 @@
 package com.application.controllers.api
 
 import com.application.Application
-import com.application.domain.DnasReceived
+import com.application.domain.DnaReceived
 import com.application.services.mongo.AppMongoClient
 import com.application.utils.Path
 import com.mongodb.BasicDBObject
 import spark.Spark
 import spock.lang.Specification
 
+/**
+ * Pruebas de relacionadas a la implementación de ApiRestController.
+ */
 class ApiRestControllerTest extends Specification {
     def "Se verifica que al enviar un mutante se obtenga un estado 200 y al enviar un humano, un 403; y al enviar un mensaje con errores de validación, de 422. Al final, se obtienen las estadísticas"() {
         given: "El servidor levantado"
@@ -102,6 +105,6 @@ class ApiRestControllerTest extends Specification {
      * Borra toda la colección dna received
      */
     private void cleanAllDnaCollection(){
-        AppMongoClient.getDb().getCollection(DnasReceived.collectionName).deleteMany(new BasicDBObject())
+        AppMongoClient.getDb().getCollection(DnaReceived.collectionName).deleteMany(new BasicDBObject())
     }
 }

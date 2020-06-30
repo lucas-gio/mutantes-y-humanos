@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class Application {
 	public static Boolean isLoaded = false;
 	public static void main(String[] args) {
-		final Logger log = LoggerFactory.getLogger(Application.class);
+		final Logger LOG = LoggerFactory.getLogger(Application.class);
 
 		try( AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
 				Application.class)) {
@@ -28,7 +28,7 @@ public class Application {
 			isLoaded = true;
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al iniciar la aplicación. ", e);
+			LOG.error("Ocurrió un error al iniciar la aplicación. ", e);
 		}
 	}
 }

@@ -13,12 +13,15 @@ import spark.Spark;
 
 import java.net.HttpURLConnection;
 
+/**
+ * Controlador dedicado a los ingresos al sistema por api rest.
+ */
 public class ApiRestController {
-	private static final Logger log = LoggerFactory.getLogger(ApiRestController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ApiRestController.class);
 	private ApiService apiService;
 	private MutantService mutantService;
 	private StatsService statsService;
-	private final static int SERVER_PORT = 80;
+	private final static int SERVER_PORT = 5000;
 	private final int MAX_THREADS = 8;
 	private final int MIN_THREADS = 2;
 	private final int IDLE_TIMEOUT_MS = 30000;
@@ -32,6 +35,9 @@ public class ApiRestController {
 		initializeRoutes();
 	}
 
+	/**
+	 * Inicializa el servidor y mapea rutas a recursos.
+	 */
 	private void initializeRoutes() {
 		Spark.port(SERVER_PORT);
 		Spark.threadPool(MAX_THREADS, MIN_THREADS, IDLE_TIMEOUT_MS);
@@ -46,20 +52,20 @@ public class ApiRestController {
 	}
 
 	/**
-	 * Procesa los mutantes obtenidos via rest.
-	 * @param request El pedido del cliente
-	 * @param response La respuesta
-	 * @return En _todo caso un string vacío ya que no es necesario un cuerpo.
+	 * Procesa el ingreso de adn para verificar si es un humano o mutante.
+	 * @param request El pedido del cliente.
+	 * @param response La respuesta.
+	 * @return Un cuerpo vacío y un estado http acorde al resultado obtenido.
 	 */
 	private String processMutantPost(Request request, Response response){
 		try{
-			String[] dnasArray = apiService.parseReceivedDnaList(request.body());
+			String[] dnasArray = apiService.parseReceivedDna(request.body());
 
-			apiService.validateDnasReceived(dnasArray);
+			apiService.validateDnaReceived(dnasArray);
 
 			boolean isMutant = mutantService.isMutant(dnasArray);
 
-			apiService.saveDnasReceived(dnasArray, isMutant);
+			apiService.saveDnaReceived(dnasArray, isMutant);
 
 			if(isMutant){
 				response.status(HttpURLConnection.HTTP_OK);
@@ -69,12 +75,12 @@ public class ApiRestController {
 			}
 		}
 		catch (RestMutantValidationException e){
-			if(log.isInfoEnabled()){ log.info("Se detectó un error de validación sobre los adn obtenidos." + e.getMessage()); }
-			// Error de entidad no procesable, en este caso por falo de validación (no existe en HttpURLConnection).
+			if(LOG.isInfoEnabled()){ LOG.info("Se detectó un error de validación sobre los adn obtenidos." + e.getMessage()); }
+			// Error de entidad no procesable, en este caso por fallo de validación (no existe en HttpURLConnection).
 			response.status(422);
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al procesar el ingreso de adn via rest.", e);
+			LOG.error("Ocurrió un error al procesar el ingreso de adn via rest.", e);
 			response.status(HttpURLConnection.HTTP_INTERNAL_ERROR);
 		}
 
@@ -83,8 +89,8 @@ public class ApiRestController {
 
 	/**
 	 * Otorga las estadísticas de conteo de mutantes y humanos, junto con su relación.
-	 * @param request El pedido del cliente
-	 * @param response La respuesta
+	 * @param request El pedido del cliente.
+	 * @param response La respuesta.
 	 * @return Un json con las estadísticas solicitadas.
 	 */
 	private String processStats(Request request, Response response){
@@ -95,7 +101,7 @@ public class ApiRestController {
 			response.status(HttpURLConnection.HTTP_OK);
 		}
 		catch (Exception e){
-			log.error("Ocurrió un error al generar las estadísticas a presentar.", e);
+			LOG.error("Ocurrió un error al generar las estadísticas a presentar.", e);
 			response.status(HttpURLConnection.HTTP_INTERNAL_ERROR);
 			result = "Ocurrió un error. Por favor, verifique el log.";
 		}
