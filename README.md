@@ -9,7 +9,13 @@ Para realizar el envío de adn debe generarse una petición POST enviando en el 
 {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
 ```
   
-Una vez finalizado el procesamiento, el sistema responderá con un estado 200, si fué detectado un mutante; 403, si el ingreso fué de un humano; 422, si se detectó un ingreso inválido; o bien 500 en caso de error genérico.
+Una vez finalizado el procesamiento, el sistema responderá con uno de los siguientes estados: 
+| Estado | Motivo |
+| ------ | ------ |
+| 200 | Fué detectado un mutante|
+| 403 | Fué detectado un humano|
+| 422 | Fué detectado un ingreso inválido|
+| 500 | Fué detectado un error genérico|
 
 Se considera inválido un ingreso con dna null, sin elementos, o compuesto con dígitos que no son los especificados en el requerimiento (A,T,C,G).
 
