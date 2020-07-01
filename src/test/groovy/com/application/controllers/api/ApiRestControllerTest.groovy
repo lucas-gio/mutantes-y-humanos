@@ -12,7 +12,7 @@ import spock.lang.Specification
  * Pruebas de relacionadas a la implementación de ApiRestController.
  */
 class ApiRestControllerTest extends Specification {
-    def "Se verifica que al enviar un mutante se obtenga un estado 200 y al enviar un humano, un 403; y al enviar un mensaje con errores de validación, de 422. Al final, se obtienen las estadísticas"() {
+    def "Se verifica que al enviar un mutante se obtenga un estado 200, al enviar un humano un 403, al enviar un mensaje con errores de validación 422, y con errores de sintaxis 400. Al final, se obtienen las estadísticas"() {
         given: "El servidor levantado"
         java.lang.Thread thread1 = new Thread("Test server 1") {
             void run() {
@@ -49,13 +49,29 @@ class ApiRestControllerTest extends Specification {
         then: "Se obtiene un 403"
         responseCode == HttpURLConnection.HTTP_FORBIDDEN
 
-        when: "Se envía un mensaje con error"
+        when: "Se envía un mensaje con error de validación (valores inválidos)"
         message = '{"dna":["XYZ","CAGTGC","2345","AGAAGG","CCCCTA","TCACTG"]}'
         post = doPost(MUTANT_URL, message)
         responseCode = post.getResponseCode()
 
         then: "Se obtiene un 422"
         responseCode == 422
+
+        when: "Se envía otro mensaje con error de validación (valor null)"
+        message = '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA",,"TCACTG"]}'
+        post = doPost(MUTANT_URL, message)
+        responseCode = post.getResponseCode()
+
+        then: "Se obtiene un 422"
+        responseCode == 422
+
+        when: "Se envía un mensaje con error de sintaxis json (falta corchete de cierre)"
+        message = '{"dna":["XYZ","CAGTGC","2345","AGAAGG","CCCCTA"}'
+        post = doPost(MUTANT_URL, message)
+        responseCode = post.getResponseCode()
+
+        then: "Se obtiene un 400"
+        responseCode == HttpURLConnection.HTTP_BAD_REQUEST
 
         when: "Se cargan 3 mutantes y 9 humanos más"
         message = '{"dna":["ATGCGA","CAGTGC","TTATGC","AGAAGG","CCCCTA","TCACTG"]}'

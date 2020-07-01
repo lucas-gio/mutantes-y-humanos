@@ -25,6 +25,10 @@ public class ApiRestService implements ApiService{
 
 		//Se verifica por cada fila si corresponde con las letras indicadas.
 		for(String anDna : dna){
+			if(anDna == null){
+				throw new RestMutantValidationException("El listado de adn a verificar se encuentra vacío.");
+			}
+
 			if (!Pattern.compile(validInputRegex()).matcher(anDna).matches()) {
 				throw new RestMutantValidationException("El siguiente adn es inválido: " + anDna);
 			}

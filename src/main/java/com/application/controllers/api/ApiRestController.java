@@ -5,6 +5,8 @@ import com.application.services.api.ApiService;
 import com.application.services.mutant.MutantService;
 import com.application.services.stats.StatsService;
 import com.application.utils.Path;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.stream.MalformedJsonException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Request;
@@ -78,6 +80,10 @@ public class ApiRestController {
 			if(LOG.isInfoEnabled()){ LOG.info("Se detectó un error de validación sobre los adn obtenidos." + e.getMessage()); }
 			// Error de entidad no procesable, en este caso por fallo de validación (no existe en HttpURLConnection).
 			response.status(422);
+		}
+		catch (JsonSyntaxException e){
+			if(LOG.isInfoEnabled()){ LOG.info("Se detectó un error de sintaxis en el mensaje obtenido. " + e.getMessage()); }
+			response.status(HttpURLConnection.HTTP_BAD_REQUEST);
 		}
 		catch (Exception e){
 			LOG.error("Ocurrió un error al procesar el ingreso de adn via rest.", e);
