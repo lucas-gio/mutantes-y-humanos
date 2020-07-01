@@ -5,8 +5,9 @@ Sistema de verificación mutantes realizado en java 8.
 Uso:
             Envío de adn
 Para realizar el envío de adn debe generarse una petición POST enviando en el cuerpo del mensaje un valor como el especificado debajo. El mismo se debe realizar a la dirección <completar>.
-  
-  {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
+```sh
+{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
+```
   
 Una vez finalizado el procesamiento, el sistema responderá con un estado 200, si fué detectado un mutante; 403, si el ingreso fué de un humano; 422, si se detectó un ingreso inválido; o bien 500 en caso de error genérico.
 
