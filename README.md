@@ -20,19 +20,22 @@ Una vez finalizado el procesamiento, el sistema responderá con uno de los sigui
 Se considera inválido un ingreso con dna null, sin elementos, o compuesto con dígitos que no son los especificados en el requerimiento (A,T,C,G).
 
 Ante cada ingreso válido, previo al momento de generar la respuesta, se almacena un registro en una base de datos mongodb, con los datos obtenidos. El siguiente es un ejemplo de un registro almacenado:
-<completar>
+
+```sh
+{"_id":"5efbe231e22baa065f61806b","dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"],"isMutant":false}
+  ```
   
 # Estadísticas
 
 Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección <completar>/stats/
 Se obtiene como resultado un json que sigue el formato propuesto:
-  <completar con rta.>
+  ```sh
+  {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
+   ```
   
 # Pruebas automáticas
 
  Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
- 
- 
   
 # WEB
 
