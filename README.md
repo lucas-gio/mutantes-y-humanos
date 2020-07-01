@@ -48,11 +48,15 @@ Se obtiene como resultado un json que sigue el formato propuesto:
  
  # Cobertura
  
- Overall Coverage Summary
+ Ejecutando los test con cobertura, intellij genera una tabla informativa
+ 
+Cobertura general
 |Package|Class, % |	Method, % |	Line, %|
+| ------ | ------ |
 all classes |	90,9% (10/ 11) |	96,1% (49/ 51) |	84% (200/ 238)
 
-Coverage Breakdown
+Cobertura por paquetes
+| ------ | ------ |
 |Package| 	Class, % |	Method, % |	Line, %|
 |com.application.utils |	0% (0/ 1) |	0% (0/ 1) |	0% (0/ 1)|
 |com.application.services.stats| 	100% (1/ 1) |	100% (2/ 2) |	81,2% (13/ 16)|
