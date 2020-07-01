@@ -16,6 +16,7 @@ Una vez finalizado el procesamiento, el sistema responderá con uno de los sigui
 | Estado | Motivo |
 | ------ | ------ |
 | 200 | Fué detectado un mutante|
+| 400 | Fué detectado un error en el formato json|
 | 403 | Fué detectado un humano|
 | 422 | Fué detectado un ingreso inválido|
 | 500 | Fué detectado un error genérico|
@@ -56,7 +57,7 @@ Se obtiene como resultado un json que sigue el formato propuesto:
 Cobertura general
 |Package|Class, % |	Method, % |	Line, %|
 | ------ | ------ | ------ | ------ |
-| all classes |	90,9% (10/ 11) |	96,1% (49/ 51) |	84% (200/ 238)| 
+| all classes |	90,9% (10/ 11) |	96,1% (49/ 51) |	85,6% (208/ 243) | 
 
 Cobertura por paquetes
 |Package| 	Class, % |	Method, % |	Line, %|
@@ -67,6 +68,6 @@ Cobertura por paquetes
 |com.application.exceptions |	100% (2/ 2) |	100% (2/ 2) |	100% (4/ 4)|
 |com.application.services.mutant |	100% (1/ 1) |	100% (9/ 9) |	81,5% (53/ 65)|
 |com.application.services.mongo |	100% (1/ 1) |	75% (3/ 4)| 	78,8% (26/ 33)|
-|com.application.controllers.api |	100% (1/ 1) |	100% (7/ 7) |	82,5% (33/ 40)|
-|com.application.services.api |	100% (1/ 1) 	|100% (6/ 6) 	|76% (19/ 25)|
+|com.application.controllers.api |	100% (1/ 1) |	100% (7/ 7) |	83,7% (36/ 43) |
+|com.application.services.api |	100% (1/ 1) 	|100% (6/ 6) 	|88,9% (24/ 27) |
 |com.application |	100% (1/ 1) |	100% (3/ 3) |	86,7% (13/ 15) |
