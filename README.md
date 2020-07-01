@@ -2,6 +2,9 @@
 
 Sistema de verificación mutantes realizado en java 8.
 
+# Ejecución
+Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
+
 # Envío de adn
 
 Para realizar el envío de adn debe generarse una petición POST enviando en el cuerpo del mensaje un valor como el especificado debajo. El mismo se debe realizar a la dirección <completar>.
