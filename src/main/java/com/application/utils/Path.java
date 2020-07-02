@@ -6,4 +6,5 @@ package com.application.utils;
 public class Path {
     public static final String MUTANT = "/mutant/";
     public static final String STATS = "/stats/";
+    public static final String INDEX = "/";
 }

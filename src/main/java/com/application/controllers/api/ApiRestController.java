@@ -9,6 +9,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.MalformedJsonException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.html.HTMLTableCaptionElement;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
@@ -43,6 +44,7 @@ public class ApiRestController {
 	private void initializeRoutes() {
 		Spark.port(SERVER_PORT);
 		Spark.threadPool(MAX_THREADS, MIN_THREADS, IDLE_TIMEOUT_MS);
+		Spark.staticFiles.location("/public"); // Para loader.io
 
 		Spark.post(Path.MUTANT, (request, response) -> {
 			return processMutantPost(request, response);
@@ -50,6 +52,12 @@ public class ApiRestController {
 
 		Spark.get(Path.STATS, (request, response) -> {
 			return processStats(request, response);
+		});
+
+		// Este caso específico es para el monitoreo de amazon beanstalk.
+		Spark.get(Path.INDEX, (request, response) -> {
+			response.status(HttpURLConnection.HTTP_OK);
+			return "";
 		});
 	}
 
