@@ -65,8 +65,8 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   · Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
   
   100 clientes en 1 min
-  ![alt text](https://hosting.photobucket.com/images/i/lucaslucas24/100_clientes_por_1_min(1).png?width=1920&height=1080&fit=bounds)
-  ![alt text](https://hosting.photobucket.com/images/i/lucaslucas24/100_clientes_por_1_min_b(1).png?width=1920&height=1080&fit=bounds)
+  ![](https://i.imgur.com/fN6ePlN.png)
+  ![](https://i.imgur.com/MJFfCDr.png)
   
   250 clientes en 1 min
   ![alt text](http://url/to/img.png)
