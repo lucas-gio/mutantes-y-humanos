@@ -157,3 +157,9 @@ Cobertura por paquetes
 |com.application.controllers.api |	100% (1/ 1) |	87,5% (7/ 8)  |	81,2% (39/ 48)  |
 |com.application.services.api |	100% (1/ 1) 	|100% (7/ 7)  	|83,3% (30/ 36)  |
 |com.application |	100% (1/ 1) |	100% (3/ 3) |	86,7% (13/ 15) |
+
+## Notas
+* La base de datos de pruebas es la misma que la que se usa para cargar mutantes. En un entorno real deberían ser distintas. Está así por un tema de costos.
+* La inyección de dependencias tal vez no sea como se maneja en spring en una aplicación java clásica. Investigué esa parte ya que en grails es más simplificado el manejo de dependencias. 
+* En pruebas automáticas con grails, las inyecciones de dependencias funcionan, pero no con un sistema java. Por eso aparecen new de servicios.
+* El archivo properties queda empaquetado en el jar, debería estar fuera así como también los jar de las dependencias. Esto es por una limitante de amazon beanstalk donde cargué el código ya que permitía sólamente el ingreso de un archivo.
