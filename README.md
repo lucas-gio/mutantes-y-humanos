@@ -5,6 +5,7 @@ Sistema de verificación mutantes realizado en java 8.
 ## Ejecución
 Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
 El archivo application.properties mantiene las configuraciones relacionadas a la base de datos. El puerto por defecto es el 5000.
+Para compilar el sistema, se debe situarse en la carpeta del proyecto, y luego ejecutar mvn clean, y luego mvn install. El jar resultante, que se encuentra en /target/MercadoLibreLucasGioia-1.0-SNAPSHOT-shaded.jar. Este jar contiene tanto la aplicación, como los archivos de recurso, y las dependencias.
 
 ## Envío de adn
 
