@@ -35,20 +35,68 @@ Para obtener las estadísticas de humanos y mutantes debe realizarse una petici�
 Se obtiene como resultado un json que sigue el formato propuesto:
   ```sh
   {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
-   ```
-  
-# Pruebas automáticas
-
- Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
-  
+   ```  
 # WEB
 
   Para los servicios rest se utilizó spark framework configurado por medio del controlador ApiRestController.
+  El sistema se empaqueta como jar junto con todas sus dependencias.
   
 # Servidores
 
- Esta aplicación está subida a amazon beanstalk, residente en Brasil. Se empaqueta como jar junto con todas sus dependencias.
- La base de datos reside en la nube de mongodb, mongodb atlas 4.2.8. Es un grupo de tres host residente en San Pablo, Brasil.
+ Esta aplicación está subida a amazon beanstalk, residente en Brasil. Está compuesto por 10 instancias detrás de un balanceador de carga de tipos t2 medium y t3 medium.
+ La base de datos reside en la nube de mongodb, mongodb atlas 4.2.8. Es un grupo de tres host de tipo M30 residente en San Pablo, Brasil.
+ 
+ # Pruebas automáticas
+
+ Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
+ 
+  # Pruebas de carga
+  
+  Las pruebas de carga fueron realizadas con loader.io. Sin costo permite hacer pruebas de hasta 10.000 clientes por 1 min. Todas estas pruebas fueron considerando que en 1 minuto se tenga una carga constante de n clientes.
+  Estas pruebas tienen un límite de carga por debajo de 1.000.000 de clientes. Para que el sistema soporte tanta cantidad de usuarios se debe invertir en más instancias del lado de amazon, y planes de cluster más costosos del lado de mongodb atlas.
+  
+  Prueba enviando mutantes
+  Se realiza un post a mutantes con la info siguiente:
+```sh
+  {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
+```
+  Se presentan errores a partir de los 3000 clientes concurrentes. Leyendo los logs aparecen los siguientes mensajes:
+  · Nginx - 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
+  · Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
+  
+  100 clientes en 1 min
+  ![alt text](https://hosting.photobucket.com/images/i/lucaslucas24/100_clientes_por_1_min(1).png?width=1920&height=1080&fit=bounds)
+  ![alt text](https://hosting.photobucket.com/images/i/lucaslucas24/100_clientes_por_1_min_b(1).png?width=1920&height=1080&fit=bounds)
+  
+  250 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+  
+  500 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+  
+  1000 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+  
+  2500 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+    
+  3000 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+  
+  5000 clientes en 1 min
+  ![alt text](http://url/to/img.png)
+  ![alt text](http://url/to/img.png)
+    
+  Prueba enviando humanos
+  Esta prueba no se puede realizar con loader.io. Toma a las respuestas de estado 4xx como erróneas y no continúa con su ejecución después de varias respuestas.
+  
+  Prueba enviando estadísticas
+  
  
  # Cobertura
  
