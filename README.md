@@ -69,28 +69,28 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   ![](https://i.imgur.com/MJFfCDr.png)
   
   250 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/9NhT5jv.png)
+  ![alt text](https://i.imgur.com/0jShm33.png)
   
   500 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/rNvnwiw.png)
+  ![alt text](https://i.imgur.com/cLSGrrr.png)
   
   1000 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/shD7lDl.png)
+  ![alt text](https://i.imgur.com/w0MUdCH.png)
   
   2500 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/8BhUZyj.png)
+  ![alt text](https://i.imgur.com/ku6etsm.png)
     
   3000 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/tNHSgQO.png)
+  ![alt text](https://i.imgur.com/mpKfh3M.png)
   
   5000 clientes en 1 min
-  ![alt text](http://url/to/img.png)
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://i.imgur.com/BXEaKs8.png)
+  ![alt text](https://i.imgur.com/P71USUr.png)
     
   Prueba enviando humanos
   Esta prueba no se puede realizar con loader.io. Toma a las respuestas de estado 4xx como erróneas y no continúa con su ejecución después de varias respuestas.
