@@ -7,7 +7,7 @@ Para ejecutar el programa se debe lanzar el main desde la clase com.application.
 
 # Envío de adn
 
-Para realizar el envío de adn debe generarse una petición POST enviando en el cuerpo del mensaje un valor como el especificado debajo. El mismo se debe realizar a la dirección <completar>.
+Para realizar el envío de adn debe generarse una petición POST enviando en el cuerpo del mensaje un valor como el especificado debajo. El mismo se debe realizar a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/mutant/  .
 ```sh
 {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
 ```
@@ -31,7 +31,7 @@ Ante cada ingreso válido, previo al momento de generar la respuesta, se almacen
   
 # Estadísticas
 
-Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección <completar>/stats/
+Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/mutant/stats/
 Se obtiene como resultado un json que sigue el formato propuesto:
   ```sh
   {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
