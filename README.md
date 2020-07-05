@@ -31,7 +31,7 @@ Ante cada ingreso válido, previo al momento de generar la respuesta, se almacen
   
 # Estadísticas
 
-Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/mutant/stats/
+Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/stats/
 Se obtiene como resultado un json que sigue el formato propuesto:
   ```sh
   {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
