@@ -37,7 +37,7 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   ```sh
   {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
    ```  
-## WEB
+## Rest
 
   Para los servicios rest se utilizó spark framework configurado por medio del controlador ApiRestController.
   El sistema se empaqueta como jar junto con todas sus dependencias.
@@ -46,10 +46,6 @@ Se obtiene como resultado un json que sigue el formato propuesto:
 
  Esta aplicación está subida a amazon beanstalk, residente en Brasil. Está compuesto por 10 instancias detrás de un balanceador de carga de tipos t2 medium y t3 medium.
  La base de datos reside en la nube de mongodb, mongodb atlas 4.2.8. Es un grupo de tres host de tipo M30 residente en San Pablo, Brasil.
- 
- ## Pruebas automáticas
-
- Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
  
   ## Pruebas de carga
   
@@ -138,8 +134,10 @@ Se obtiene como resultado un json que sigue el formato propuesto:
  ### Estado de amazon luego de las pruebas realizadas
  ![](https://i.imgur.com/BiKyiuL.png)
  
- ## Cobertura
  
+  ## Pruebas automáticas y cobertura
+  
+ Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
  Ejecutando los test con cobertura, intellij genera una tabla informativa
  
 Cobertura general
