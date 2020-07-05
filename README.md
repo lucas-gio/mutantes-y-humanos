@@ -4,6 +4,7 @@ Sistema de verificación mutantes realizado en java 8.
 
 ## Ejecución
 Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
+El archivo application.properties mantiene las configuraciones relacionadas a la base de datos. El puerto por defecto es el 5000.
 
 ## Envío de adn
 
