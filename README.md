@@ -57,17 +57,17 @@ Se obtiene como resultado un json que sigue el formato propuesto:
 Cobertura general
 |Package|Class, % |	Method, % |	Line, %|
 | ------ | ------ | ------ | ------ |
-| all classes |	90,9% (10/ 11) |	96,1% (49/ 51) |	85,6% (208/ 243) | 
+| all classes |	91,7% (11/ 12)  |	92,7% (51/ 55)  |	84,8% (229/ 270)  | 
 
 Cobertura por paquetes
 |Package| 	Class, % |	Method, % |	Line, %|
 | ------ | ------ | ------ | ------ |
 |com.application.utils |	0% (0/ 1) |	0% (0/ 1) |	0% (0/ 1)|
-|com.application.services.stats| 	100% (1/ 1) |	100% (2/ 2) |	81,2% (13/ 16)|
-|com.application.domain |	100% (2/ 2) |	100% (17/ 17) |	100% (39/ 39)|
+|com.application.services.stats| 	100% (1/ 1) |	100% (2/ 2) |	84,2% (16/ 19) |
+|com.application.domain |	100% (3/ 3)  |	94,7% (18/ 19)  |	97,8% (44/ 45) |
 |com.application.exceptions |	100% (2/ 2) |	100% (2/ 2) |	100% (4/ 4)|
 |com.application.services.mutant |	100% (1/ 1) |	100% (9/ 9) |	81,5% (53/ 65)|
-|com.application.services.mongo |	100% (1/ 1) |	75% (3/ 4)| 	78,8% (26/ 33)|
-|com.application.controllers.api |	100% (1/ 1) |	100% (7/ 7) |	83,7% (36/ 43) |
-|com.application.services.api |	100% (1/ 1) 	|100% (6/ 6) 	|88,9% (24/ 27) |
+|com.application.services.mongo |	100% (1/ 1) |	75% (3/ 4)| 	 	81,1% (30/ 37) |
+|com.application.controllers.api |	100% (1/ 1) |	87,5% (7/ 8)  |	81,2% (39/ 48)  |
+|com.application.services.api |	100% (1/ 1) 	|100% (7/ 7)  	|83,3% (30/ 36)  |
 |com.application |	100% (1/ 1) |	100% (3/ 3) |	86,7% (13/ 15) |
