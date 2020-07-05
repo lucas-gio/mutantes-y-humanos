@@ -1,6 +1,7 @@
 package com.application.services.api
 
 import com.application.domain.DnaReceived
+import com.application.domain.Stat
 import com.application.exceptions.RestMutantValidationException
 import com.application.services.mongo.AppMongoClient
 
@@ -145,10 +146,44 @@ class ApiRestServiceTest extends Specification{
         thrown(RestMutantValidationException)
     }
 
+    def "Se prueba que el método que almacena incrementos en stats funcione incrementando mutantes cuando recibe mutantes, y humanos en caso contrario; Además de ser un solo registro"(){
+        given: "La colección de estadísticas vacías"
+        cleanStats();
+
+        when: "Se envían 50 mutantes y 100 humanos"
+        50.times{
+            apiRestService.saveStat(true);
+        }
+
+        100.times {
+            apiRestService.saveStat(false);
+        }
+
+        List<Document> statDocuments = AppMongoClient.getDb().getCollection(Stat.collectionName).find().collect();
+
+        then: "Es sólo un registro"
+        statDocuments
+        statDocuments.size() == 1
+
+        and: "Tiene los valores esperados"
+        (statDocuments.first() as Document).get(Stat._mutantsQuantity) == 50
+        (statDocuments.first() as Document).get(Stat._humansQuantity) == 100
+
+        cleanup: "Se elimina la colección de estadísticas utilizada."
+        cleanStats();
+    }
+
     /**
      * Borra toda la colección dna received
      */
     private void cleanAllDnaCollection(){
         AppMongoClient.getDb().getCollection(DnaReceived.collectionName).deleteMany(new BasicDBObject())
+    }
+
+    /**
+     * Borra toda la colección stats.
+     */
+    private void cleanStats(){
+        AppMongoClient.getDb().getCollection(Stat.collectionName).deleteMany(new BasicDBObject());
     }
 }

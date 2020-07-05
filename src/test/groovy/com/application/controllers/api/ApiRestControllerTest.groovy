@@ -2,6 +2,7 @@ package com.application.controllers.api
 
 import com.application.Application
 import com.application.domain.DnaReceived
+import com.application.domain.Stat
 import com.application.services.mongo.AppMongoClient
 import com.application.utils.Path
 import com.mongodb.BasicDBObject
@@ -31,7 +32,7 @@ class ApiRestControllerTest extends Specification {
         final String MUTANT_URL = "http://localhost:${ApiRestController.SERVER_PORT}${Path.MUTANT}"
 
         and: "La colección de adn vacía"
-        cleanAllDnaCollection()
+        cleanAllCollection()
 
         when: "Se realiza un post con un mutante"
         String message = '{"dna":["ATGCGA","CAGTGC","TTATGC","AGAAGG","CCCCTA","TCACTG"]}'
@@ -98,7 +99,7 @@ class ApiRestControllerTest extends Specification {
 
         cleanup: "Se finaliza el servidor. y se elimina lo creado."
         thread1.interrupt()
-        cleanAllDnaCollection()
+        cleanAllCollection()
     }
 
     /**
@@ -120,7 +121,8 @@ class ApiRestControllerTest extends Specification {
     /**
      * Borra toda la colección dna received
      */
-    private void cleanAllDnaCollection(){
+    private void cleanAllCollection(){
         AppMongoClient.getDb().getCollection(DnaReceived.collectionName).deleteMany(new BasicDBObject())
+        AppMongoClient.getDb().getCollection(Stat.collectionName).deleteMany(new BasicDBObject())
     }
 }

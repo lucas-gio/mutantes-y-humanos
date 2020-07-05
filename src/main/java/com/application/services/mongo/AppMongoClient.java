@@ -1,6 +1,7 @@
 package com.application.services.mongo;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 import org.slf4j.Logger;
@@ -53,7 +54,14 @@ public final class AppMongoClient {
 
 						if(LOG.isDebugEnabled()){ LOG.debug("Conectando a " + mongoUri.toString()); }
 
-						instance = new MongoClient(new MongoClientURI(mongoUri.toString()));
+						MongoClientOptions.Builder clientOptions = new MongoClientOptions.Builder();
+						// La cantidad de conexiones que tendrá el pool de mongodb.
+						clientOptions.minConnectionsPerHost(10);
+						clientOptions.connectionsPerHost(2990);
+						// Tiempo de espera de 60 seg como máximo.
+						clientOptions.maxConnectionIdleTime(60000);
+
+						instance = new MongoClient(new MongoClientURI(mongoUri.toString(), clientOptions));
 					}
 					catch (Exception e){
 						LOG.error("Ocurrió un error al crear la conexión a la base de datos.", e);

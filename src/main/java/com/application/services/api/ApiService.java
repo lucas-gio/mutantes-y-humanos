@@ -32,4 +32,10 @@ public interface ApiService {
 	 * @return El array de adn.
 	 */
 	String[] parseReceivedDna(String body);
+
+	/**
+	 * Almacena un incremento en la tabla de estadísticas de humanos y mutantes.
+	 * @param isMutant
+	 */
+	void saveStat(Boolean isMutant) throws Exception;
 }

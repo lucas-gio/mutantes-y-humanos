@@ -2,9 +2,13 @@ package com.application.services.api;
 
 import com.application.controllers.api.ApiRestController;
 import com.application.domain.DnaReceived;
+import com.application.domain.Stat;
 import com.application.exceptions.RestMutantValidationException;
 import com.application.services.mongo.AppMongoClient;
 import com.google.gson.Gson;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -67,6 +71,20 @@ public class ApiRestService implements ApiService{
 		}
 		catch (Exception e){
 			LOG.error("Ocurrió un error al interpretar el mensaje recibido.", e);
+			throw e;
+		}
+	}
+
+	@Override
+	public void saveStat(Boolean isMutant) throws Exception {
+		try {
+			AppMongoClient.getDb().getCollection(Stat.collectionName).updateOne(
+					Filters.eq(Stat._id, Stat.id),
+					Updates.inc((isMutant ? Stat._mutantsQuantity : Stat._humansQuantity), 1),
+					new UpdateOptions().upsert(true));
+		}
+		catch (Exception e){
+			LOG.error("Ocurrió un error al incrementar la estadística.", e);
 			throw e;
 		}
 	}

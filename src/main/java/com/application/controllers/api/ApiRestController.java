@@ -63,6 +63,8 @@ public class ApiRestController {
 
 	/**
 	 * Procesa el ingreso de adn para verificar si es un humano o mutante.
+	 * En caso de ser mutante o humano almacena un incremento para visualizarlo
+	 * posteriormente como estadística.
 	 * @param request El pedido del cliente.
 	 * @param response La respuesta.
 	 * @return Un cuerpo vacío y un estado http acorde al resultado obtenido.
@@ -83,6 +85,8 @@ public class ApiRestController {
 			else{
 				response.status(HttpURLConnection.HTTP_FORBIDDEN);
 			}
+
+			apiService.saveStat(isMutant);
 		}
 		catch (RestMutantValidationException e){
 			if(LOG.isInfoEnabled()){ LOG.info("Se detectó un error de validación sobre los adn obtenidos." + e.getMessage()); }
