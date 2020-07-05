@@ -55,7 +55,7 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   Las pruebas de carga fueron realizadas con loader.io. Sin costo permite hacer pruebas de hasta 10.000 clientes por 1 min. Todas estas pruebas fueron considerando que en 1 minuto se tenga una carga constante de n clientes.
   Estas pruebas tienen un límite de carga por debajo de 1.000.000 de clientes. Para que el sistema soporte tanta cantidad de usuarios se debe invertir en más instancias del lado de amazon, y planes de cluster más costosos del lado de mongodb atlas.
   
-  Prueba enviando mutantes
+ ### Prueba enviando mutantes
   Se realiza un post a mutantes con la info siguiente:
 ```sh
   {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
@@ -65,39 +65,77 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   · Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
   
   ### 100 clientes en 1 min
-
   ![](https://i.imgur.com/fN6ePlN.png)
   ![](https://i.imgur.com/MJFfCDr.png)
   
   ### 250 clientes en 1 min
-  ![alt text](https://i.imgur.com/9NhT5jv.png)
-  ![alt text](https://i.imgur.com/0jShm33.png)
+  ![](https://i.imgur.com/9NhT5jv.png)
+  ![](https://i.imgur.com/0jShm33.png)
   
   ### 500 clientes en 1 min
-  ![alt text](https://i.imgur.com/rNvnwiw.png)
-  ![alt text](https://i.imgur.com/cLSGrrr.png)
+  ![](https://i.imgur.com/rNvnwiw.png)
+  ![](https://i.imgur.com/cLSGrrr.png)
   
   ### 1000 clientes en 1 min
-  ![alt text](https://i.imgur.com/shD7lDl.png)
-  ![alt text](https://i.imgur.com/w0MUdCH.png)
+  ![](https://i.imgur.com/shD7lDl.png)
+  ![](https://i.imgur.com/w0MUdCH.png)
   
   ### 2500 clientes en 1 min
-  ![alt text](https://i.imgur.com/8BhUZyj.png)
-  ![alt text](https://i.imgur.com/ku6etsm.png)
+  ![](https://i.imgur.com/8BhUZyj.png)
+  ![](https://i.imgur.com/ku6etsm.png)
     
   ### 3000 clientes en 1 min
-  ![alt text](https://i.imgur.com/tNHSgQO.png)
-  ![alt text](https://i.imgur.com/mpKfh3M.png)
+  ![](https://i.imgur.com/tNHSgQO.png)
+  ![](https://i.imgur.com/mpKfh3M.png)
   
   ### 5000 clientes en 1 min
-  ![alt text](https://i.imgur.com/BXEaKs8.png)
-  ![alt text](https://i.imgur.com/P71USUr.png)
+  ![](https://i.imgur.com/BXEaKs8.png)
+  ![](https://i.imgur.com/P71USUr.png)
     
-  Prueba enviando humanos
+  ### Prueba enviando humanos
   Esta prueba no se puede realizar con loader.io. Toma a las respuestas de estado 4xx como erróneas y no continúa con su ejecución después de varias respuestas.
   
-  Prueba enviando estadísticas
+  ### Prueba recibiendo estadísticas
+  Luego de enviar los mutantes anteriores, se realizó la prueba de rendimiento sobre estadísticas.
+  Se presentan errores a partir de los 5500 clientes concurrentes en este caso. 
+  Leyendo los logs aparecen los siguientes mensajes:
+  · Nginx: 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
+  · Log de acceso: 172.31.43.235 - [05/Jul/2020:04:22:58 +0000] "GET /stats/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "18.213.246.177"
   
+ ### 100 clientes en 1 min
+  ![]( https://i.imgur.com/c9u9D8J.png)
+  ![](https://i.imgur.com/RVbIzHx.png)
+
+ ### 250 clientes en 1 min
+ ![](https://i.imgur.com/NheBeXQ.png)
+ ![](https://i.imgur.com/WGFZvms.png)
+ 
+ ### 500 clientes en 1 min
+ ![](https://i.imgur.com/LeCsgpy.png)
+ ![](https://i.imgur.com/Y30aVJL.png)
+ 
+ ### 1000 clientes en 1 min
+ ![](https://i.imgur.com/HmLSnX2.png)
+ ![](https://i.imgur.com/4cc1rxb.png)
+ 
+ ### 2500 clientes en 1 min
+ ![](https://i.imgur.com/n6HnKdV.png)
+ ![](https://i.imgur.com/wycfd8c.png)
+ 
+ ### 5000 clientes en 1 min
+ ![](https://i.imgur.com/lUlZ5Z5.png)
+ ![](https://i.imgur.com/9G09mGl.png)
+ 
+ ### 5500 clientes en 1 min
+ ![](https://i.imgur.com/SUufrNl.png)
+ ![](https://i.imgur.com/73cSsjS.png)
+ 
+ ### 10.000 clientes en 1 min
+ ![](https://i.imgur.com/FhvR0EW.png)
+ ![](https://i.imgur.com/IaZPbxG.png)
+ 
+ ### Estado de amazon luego de las pruebas realizadas
+ ![](https://i.imgur.com/BiKyiuL.png)
  
  ## Cobertura
  
