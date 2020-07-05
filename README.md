@@ -61,8 +61,8 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
 ```
   Se presentan errores a partir de los 3000 clientes concurrentes. Leyendo los logs aparecen los siguientes mensajes:
-  · Nginx - 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
-  · Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
+  * Nginx - 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
+  * Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
   
   ### 100 clientes en 1 min
   ![](https://i.imgur.com/fN6ePlN.png)
@@ -99,8 +99,8 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   Luego de enviar los mutantes anteriores, se realizó la prueba de rendimiento sobre estadísticas.
   Se presentan errores a partir de los 5500 clientes concurrentes en este caso. 
   Leyendo los logs aparecen los siguientes mensajes:
-  · Nginx: 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
-  · Log de acceso: 172.31.43.235 - [05/Jul/2020:04:22:58 +0000] "GET /stats/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "18.213.246.177"
+  * Nginx: 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
+  * Log de acceso: 172.31.43.235 - [05/Jul/2020:04:22:58 +0000] "GET /stats/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "18.213.246.177"
   
  ### 100 clientes en 1 min
   ![]( https://i.imgur.com/c9u9D8J.png)
