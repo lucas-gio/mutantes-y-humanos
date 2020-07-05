@@ -2,10 +2,10 @@
 
 Sistema de verificación mutantes realizado en java 8.
 
-# Ejecución
+## Ejecución
 Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
 
-# Envío de adn
+## Envío de adn
 
 Para realizar el envío de adn debe generarse una petición POST enviando en el cuerpo del mensaje un valor como el especificado debajo. El mismo se debe realizar a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/mutant/  .
 ```sh
@@ -29,28 +29,28 @@ Ante cada ingreso válido, previo al momento de generar la respuesta, se almacen
 {"_id":"5efbe231e22baa065f61806b","dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"],"isMutant":false}
   ```
   
-# Estadísticas
+## Estadísticas
 
 Para obtener las estadísticas de humanos y mutantes debe realizarse una petición GET a la dirección http://mllucasgioia2-env.eba-ecxkzm5a.sa-east-1.elasticbeanstalk.com/stats/
 Se obtiene como resultado un json que sigue el formato propuesto:
   ```sh
   {"count_mutant_dna":4,"count_human_dna":10,"ratio":0.40}
    ```  
-# WEB
+## WEB
 
   Para los servicios rest se utilizó spark framework configurado por medio del controlador ApiRestController.
   El sistema se empaqueta como jar junto con todas sus dependencias.
   
-# Servidores
+## Servidores
 
  Esta aplicación está subida a amazon beanstalk, residente en Brasil. Está compuesto por 10 instancias detrás de un balanceador de carga de tipos t2 medium y t3 medium.
  La base de datos reside en la nube de mongodb, mongodb atlas 4.2.8. Es un grupo de tres host de tipo M30 residente en San Pablo, Brasil.
  
- # Pruebas automáticas
+ ## Pruebas automáticas
 
  Las pruebas automáticas, tanto unitarias como de integración, están realizadas con el framework spock y el lenguaje groovy (requerido por spock).
  
-  # Pruebas de carga
+  ## Pruebas de carga
   
   Las pruebas de carga fueron realizadas con loader.io. Sin costo permite hacer pruebas de hasta 10.000 clientes por 1 min. Todas estas pruebas fueron considerando que en 1 minuto se tenga una carga constante de n clientes.
   Estas pruebas tienen un límite de carga por debajo de 1.000.000 de clientes. Para que el sistema soporte tanta cantidad de usuarios se debe invertir en más instancias del lado de amazon, y planes de cluster más costosos del lado de mongodb atlas.
@@ -64,31 +64,32 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   · Nginx - 2020/07/05 03:51:53 [alert] 8702#0: 1024 worker_connections are not enough
   · Log de acceso: 172.31.7.253 - - [05/Jul/2020:03:52:40 +0000] "POST /mutant/ HTTP/1.1" 499 0 "-" "loader.io;92972a888c41536f5b7e62afb6d62509" "54.84.218.101"
   
-  100 clientes en 1 min
+  ### 100 clientes en 1 min
+
   ![](https://i.imgur.com/fN6ePlN.png)
   ![](https://i.imgur.com/MJFfCDr.png)
   
-  250 clientes en 1 min
+  ### 250 clientes en 1 min
   ![alt text](https://i.imgur.com/9NhT5jv.png)
   ![alt text](https://i.imgur.com/0jShm33.png)
   
-  500 clientes en 1 min
+  ### 500 clientes en 1 min
   ![alt text](https://i.imgur.com/rNvnwiw.png)
   ![alt text](https://i.imgur.com/cLSGrrr.png)
   
-  1000 clientes en 1 min
+  ### 1000 clientes en 1 min
   ![alt text](https://i.imgur.com/shD7lDl.png)
   ![alt text](https://i.imgur.com/w0MUdCH.png)
   
-  2500 clientes en 1 min
+  ### 2500 clientes en 1 min
   ![alt text](https://i.imgur.com/8BhUZyj.png)
   ![alt text](https://i.imgur.com/ku6etsm.png)
     
-  3000 clientes en 1 min
+  ### 3000 clientes en 1 min
   ![alt text](https://i.imgur.com/tNHSgQO.png)
   ![alt text](https://i.imgur.com/mpKfh3M.png)
   
-  5000 clientes en 1 min
+  ### 5000 clientes en 1 min
   ![alt text](https://i.imgur.com/BXEaKs8.png)
   ![alt text](https://i.imgur.com/P71USUr.png)
     
@@ -98,7 +99,7 @@ Se obtiene como resultado un json que sigue el formato propuesto:
   Prueba enviando estadísticas
   
  
- # Cobertura
+ ## Cobertura
  
  Ejecutando los test con cobertura, intellij genera una tabla informativa
  
