@@ -1,6 +1,7 @@
 # MercadoLibre-Lucas-Gioia
-
+Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
 Sistema de verificación mutantes realizado en java 8.
+
 
 ## Ejecución
 Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
