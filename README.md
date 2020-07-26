@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.com/lucas-gio/mutantes-y-humanos.svg?branch=master)](https://travis-ci.com/lucas-gio/mutantes-y-humanos)
-[![Code Grade](https://www.code-inspector.com/project/11526/score/svg)](https://frontend.code-inspector.com/public/project/11526/mutantes-y-humanos/dashboard)
-[![Code Grade](https://www.code-inspector.com/project/11526/status/svg)](https://frontend.code-inspector.com/public/project/11526/mutantes-y-humanos/dashboard)
+[![CodeFactor](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos/badge)](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos)
 # Mutantes y Humanos-Lucas-Gioia
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
 Sistema de verificación mutantes realizado en java 8.
