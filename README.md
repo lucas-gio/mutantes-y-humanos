@@ -2,7 +2,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos/badge)](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos)
 # Mutantes y Humanos-Lucas-Gioia
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
-Sistema de verificación mutantes realizado en java 8.
+Sistema de verificación mutantes realizado en java 8 para ingreso de mercadolibre.
 
 
 ## Ejecución
