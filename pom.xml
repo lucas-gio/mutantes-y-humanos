@@ -42,7 +42,7 @@
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <artifactId>log4j-core</artifactId>
       <version>${logging.version}</version>
     </dependency>
     <dependency>
