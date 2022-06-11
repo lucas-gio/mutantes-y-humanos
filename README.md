@@ -4,6 +4,8 @@
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
 Sistema de verificación mutantes realizado en java 8 para ingreso de mercadolibre.
 
+#### Se encuentra disponible una versión con tecnología actualizada de este proyecto en: (https://github.com/lucas-gio/mutantes-y-humanos-kotlin)
+
 
 ## Ejecución
 Para ejecutar el programa se debe lanzar el main desde la clase com.application.Application.
