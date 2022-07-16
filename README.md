@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/lucas-gio/mutantes-y-humanos.svg?branch=master)](https://app.travis-ci.com/lucas-gio/mutantes-y-humanos)
+
 [![CodeFactor](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos/badge)](https://www.codefactor.io/repository/github/lucas-gio/mutantes-y-humanos)
 # Mutantes y Humanos-Lucas-Gioia
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar contra los X-Men.
